@@ -1,8 +1,8 @@
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useState, useEffect,useContext } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { TestContext } from './context/TestContext'
-// import { useSelector } from 'react-redux'
+// import { TestContext } from './context/TestContext'
+import { useSelector } from 'react-redux'
 
 
 const Test2 = () => {
@@ -11,8 +11,10 @@ const Test2 = () => {
   const [isEditing, setIsEditing] = useState(false)
   const [editIndex, setEditIndex] = useState(null)
 
-  const {value}=useContext(TestContext);
-  console.log("value context is-->", value)
+  // const {value}=useContext(TestContext);
+  // console.log("value context is-->", value)
+  const value2=useSelector((state)=>state.counter.value);
+  console.log("value 2 is-->", value2);
 
 //   const value=useSelector((state)=>state.counter.value);
 //   console.log("value is-->", value);
